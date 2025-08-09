@@ -1,0 +1,154 @@
+/* Existing Slider Styles */
+.slider-container {
+  width: 800px;
+  height: 300px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border: 3px solid #444;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 30px #8000ff;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: calc(100% * 4);
+}
+
+.slide {
+  width: 800px;
+  height: 300px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Title */
+.title-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.title-container h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.title-container p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Form */
+.container {
+  width: 400px;
+  margin: 2rem auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: #070707;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+input {
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    background-color: #f2a9dd;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #e094c5;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a:hover {
+    opacity: 0.8;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4e1f0;
+}
+
+
+.avatar {
+    display: block;
+    margin: 0 auto 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 60%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Limmo PC</title>
+  <link rel="stylesheet" href="register.css" />
+  <script defer src="validate.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="homepage.html">Limmo PC</a>
+        </div>
+    </header>
+  <!-- Slider at top like homepage -->
+  <div class="slider-container">
+    <div class="slider-track" id="slider-track">
+      <img class="slide" src="882e3c256408ebd5b022b3fb89907bff-scaled-1-e1659263732770.jpg" alt="Slide 1">
+      <img class="slide" src="decor-phong-gaming-mau-6.jpg" alt="Slide 2">
+      <img class="slide" src="pc-choi-game-intel-core-i3.jpg" alt="Slide 3">
+      <img class="slide" src="882e3c256408ebd5b022b3fb89907bff-scaled-1-e1659263732770.jpg" alt="Slide 4">
+      <!-- repeat images for infinite effect -->
+    </div>
+  </div>
+  <script>
+  const track = document.querySelector(".slider-track");
+  const slides = document.querySelectorAll(".slide");
+  let index = 0;
+  const slideWidth = slides[0].clientWidth;
+  const totalSlides = slides.length;
+
+  function moveSlider() {
+    index++;
+    track.style.transition = "transform 0.5s ease-in-out";
+    track.style.transform = `translateX(-${slideWidth * index}px)`;
+
+    // Reset to the beginning when reaching the last cloned slide
+    if (index === totalSlides - 1) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        index = 0;
+        track.style.transform = `translateX(0px)`;
+      }, 500);
+    }
+  }
+
+  setInterval(moveSlider, 3000); // slide every 3 seconds
+</script>
+  <!-- Register form section -->
+  <div class="title-container">
+    <h1>Limmo PC</h1>
+    <p>High-end PCs and Techs</p>
+  </div>
+
+  <!-- Registration Form -->
+   <div class="container">
+    <h1>Register</h1>
+    <form id="registerForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit" class="btn" >Register</button>
+    </form>
+  </div>
+
+  <script>
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Prevent duplicate email
+    if (users.some(user => user.email === email)) {
+        alert("Email already registered");
+        return;
+    }
+
+    users.push({ name, email, password });
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("Registration successful!");
+    window.location.href = "signin.html";
+});
+</script>
+
+
+
+</body>
+
+</html>

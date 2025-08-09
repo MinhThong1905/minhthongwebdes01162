@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="register.css"> <!-- Reuse your login CSS -->
+    <style>
+        .profile-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .profile-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-field {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .profile-field strong {
+            display: inline-block;
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar with logo -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="homepage.html">Limmo PC</a>
+        </div>
+    </header>
+    <!-- Profile Content -->
+    <div class="profile-container">
+        <h2>User Profile</h2>
+        <img id="profileAvatar" src="06dabcf6a4a42cfa75b5.jpg" alt="User Avatar" class="avatar">
+        <div class="profile-field"><strong>Username:</strong> <span id="profileUsername"></span></div>
+        <div class="profile-field"><strong>Email:</strong> <span id="profileEmail"></span></div>
+        <div class="profile-field"><strong>Role:</strong> <span id="profileRole"></span></div>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Get data from localStorage
+        document.getElementById("profileUsername").textContent = localStorage.getItem("username") || "Phan Minh Thong";
+        document.getElementById("profileEmail").textContent = localStorage.getItem("email") || "minhthong@gmail.com";
+        document.getElementById("profileRole").textContent = localStorage.getItem("role") || "Admin";
+
+        // Logout function
+        function logout() {
+            localStorage.clear();
+            window.location.href = "homepage.html";
+        }
+    </script>
+</body>
+</html>

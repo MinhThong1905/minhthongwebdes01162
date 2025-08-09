@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Limmo PC</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="homepage.html">Limmo PC</a>
+        </div>
+    </header>
+    
+    <div class="slider-container">
+        <div class="slider-track">
+            <img class="slide" src="882e3c256408ebd5b022b3fb89907bff-scaled-1-e1659263732770.jpg" alt="Slide 1">
+            <img class="slide" src="decor-phong-gaming-mau-6.jpg" alt="Slide 2">
+            <img class="slide" src="pc-choi-game-intel-core-i3.jpg" alt="Slide 3">
+            <img class="slide" src="882e3c256408ebd5b022b3fb89907bff-scaled-1-e1659263732770.jpg" alt="Slide 4">
+        </div>
+    </div>
+
+    <div class="title-container">
+        <h1>Limmo PC</h1>
+        <p>High-end PCs and Techs</p>
+    </div>
+
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="registerForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        const track = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    setInterval(() => {
+      index++;
+      track.style.transform = `translateX(${-index * 800}px)`;
+      if (index === slides.length - 1) {
+        setTimeout(() => {
+          track.style.transition = 'none';
+          index = 0;
+          track.style.transform = 'translateX(0)';
+          setTimeout(() => track.style.transition = 'transform 0.5s ease-in-out', 50);
+        }, 500);
+      }
+    }, 3000);
+    </script>
+</body>
+</html>

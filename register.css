@@ -1,4 +1,36 @@
-/* Existing Slider Styles */
+/* Base Reset */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4e1f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo a:hover {
+  opacity: 0.8;
+}
+
+/* ---------------- SLIDER (KEEP SAME BEHAVIOR) ---------------- */
 .slider-container {
   width: 800px;
   height: 300px;
@@ -23,14 +55,26 @@
   flex-shrink: 0;
 }
 
-/* Title */
+/* Responsive Fix ONLY for slider */
+@media (max-width: 500px) {
+  .slider-container {
+    width: 100%;
+    height: auto;
+  }
+  .slide {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ---------------- TITLES ---------------- */
 .title-container {
   text-align: center;
   margin-top: 20px;
 }
 
 .title-container h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -39,9 +83,10 @@
   color: #666;
 }
 
-/* Form */
+/* ---------------- FORM CONTAINER ---------------- */
 .container {
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   margin: 2rem auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -55,100 +100,97 @@
   margin-bottom: 20px;
 }
 
-.container input {
+.container input,
+textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 8px 0 16px;
   border: 1px solid #aaa;
   border-radius: 5px;
-}
-
-.btn {
-  background-color: #070707;
-  color: white;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #555;
-}
-
-input {
-    padding: 12px;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-button {
-    width: 100%;
-    background-color: #f2a9dd;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #e094c5;
-}
-
-textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
-.logo a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.logo a:hover {
-    opacity: 0.8;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-}
-
-.logo {
-  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 5px;
   font-weight: bold;
 }
 
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4e1f0;
+/* ---------------- BUTTONS ---------------- */
+.btn,
+button {
+  width: 100%;
+  background-color: #070707;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
+.btn:hover,
+button:hover {
+  background-color: #555;
+}
 
+/* ---------------- AVATAR ---------------- */
 .avatar {
-    display: block;
-    margin: 0 auto 20px;
-    width: 100px;
-    height: 100px;
-    border-radius: 60%;
-    object-fit: cover;
-    border: 2px solid #ccc;
+  display: block;
+  margin: 0 auto 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 60%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+/* ---------------- RESPONSIVE LAYOUT ---------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .title-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 500px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .title-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .title-container p {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 100%;
+    margin: 1rem auto;
+    padding: 15px;
+  }
 }
